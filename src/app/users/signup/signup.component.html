@@ -1,0 +1,38 @@
+<h3 style="text-align:center;">SignUp to visit Avenger-Fan page</h3>
+<form (ngSubmit)="onSubmit()" #signupData="ngForm">
+  <div class="col-lg-9" ngModelGroup="userData">
+
+    <div class="form-row">
+      <label for="firstName" class="col-lg-4">First Name :</label>
+      <input type="text" id="firstName" class="form-control col-lg-8" placeholder="First Name" ngModel name="firstName">
+    </div>
+    <div class="form-row">
+      <label for="lastName" class="col-lg-4">Last Name :</label>
+      <input type="text" id="lastName" class="form-control col-lg-8" placeholder="Last Name" ngModel name="lastName">
+    </div>
+    <div class="form-row">
+      <label for="mobile" class="col-lg-4">Mobile :</label>
+      <input type="number" id="mobile" class="form-control col-lg-8" placeholder="Mobile Number" ngModel name="mobile">
+    </div>
+    <div class="form-row">
+      <label for="username" class="col-lg-4"><sup>*</sup>Username :</label>
+      <input type="text" id="username" class="form-control col-lg-8" placeholder="Username" ngModel name="username"
+        required>
+    </div>
+    <div class="form-row">
+      <label for="email" class="col-lg-4"><sup>*</sup>Email :</label>
+      <input type="email" id="email" class="form-control col-lg-8" placeholder="Email Address" ngModel name="email"
+        required email #email="ngModel">
+      <span *ngIf="!email.valid && email.touched" class="help-block">Please enter a valid email id</span>
+    </div>
+    <div class="form-row">
+      <label for="password" class="col-lg-4"><sup>*</sup>Password :</label>
+      <input type="password" id="password" class="form-control col-lg-8" placeholder="Password" ngModel name="password"
+        required>
+    </div>
+    <div class="form-row" style="display:flex; justify-content:center;">
+      <button class="col-sm-3 btn btn-primary" style="margin:10px;" type="submit" [disabled]="!signupData.valid">Submit</button>
+      <button class="col-sm-3 btn btn-danger" style="margin:10px;" (click)="onReset()" type="button">Reset</button>
+    </div>
+  </div>
+</form>
