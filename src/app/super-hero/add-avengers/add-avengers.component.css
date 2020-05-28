@@ -1,0 +1,19 @@
+input.ng-valid{
+    border-left: 5px blue solid;
+}
+input.ng-invalid.ng-touched{
+    border-left: 5px red solid;
+}
+.form-row {
+    display:flex;
+    margin:15px; 
+    justify-content:center;
+}
+.avenger {
+    padding: 20px;
+    height: 85vh;
+    background-image: linear-gradient(to right bottom,rgba(14, 167, 65, 0.8), rgba(27, 216, 128, 0.8))
+    , url(https://akm-img-a-in.tosshub.com/indiatoday/images/story/201904/avengers-endgame_11.jpeg?tg4USOAjQdKzpDIlW5EK37ACGlssIOEk);
+    background-size: cover;
+    background-position: center;
+}

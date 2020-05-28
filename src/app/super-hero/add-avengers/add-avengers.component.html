@@ -1,0 +1,32 @@
+<form [formGroup]="avenger" (ngSubmit)="addAvenger()" class="avenger">
+  <div formGroupName="avengerData" class="col-lg-9">
+    <div class="form-row">
+      <label for="avengerName" class="col-lg-4">Avenger's Name: -</label>
+      <input type="text" class="col-lg-7 form-control" placeholder="Avenger's Name" formControlName="avengersName">
+    </div>
+    <div class="form-row">
+      <label for="characterName" class="col-lg-4">Character's Name: -</label>
+      <input type="text" class="col-lg-7 form-control" placeholder="Character's Name" formControlName="charactersName">
+    </div>
+    <div class="form-row">
+      <label for="realName" class="col-lg-4">Real's Name: -</label>
+      <input type="text" class="col-lg-7 form-control" placeholder="Real's Name" formControlName="realName">
+    </div>
+    <div class="form-row">
+      <label for="imageUrl" class="col-lg-4">Image Url: -</label>
+      <input type="text" class="col-lg-7 form-control" placeholder="Image Url" formControlName="imageUrl">
+    </div>
+    <div class="form-row">
+      <label for="movie" class="col-lg-4">Movie: -</label>
+      <input type="text" class="col-lg-7 form-control" placeholder="Movie" formControlName="movie">
+    </div>
+    <div class="form-row">
+      <label for="power" class="col-lg-4">Power: -</label>
+      <input type="text" class="col-lg-7 form-control" placeholder="Power" formControlName="power">
+    </div>
+    <div class="form-row">
+      <button type="submit" class="btn btn-primary col-sm-3" [disabled]="!avenger.get('avengerData').valid">Add new
+        Avenger</button>
+    </div>
+  </div>
+</form>

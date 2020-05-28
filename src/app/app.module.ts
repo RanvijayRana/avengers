@@ -13,13 +13,15 @@ import { SuperHeroComponent } from './super-hero/super-hero.component';
 import { SignupComponent } from './users/signup/signup.component';
 import { LoginComponent } from './users/login/login.component';
 import { AvengersService } from './shared/avengers.service';
+import { AddAvengersComponent } from './super-hero/add-avengers/add-avengers.component';
 
 
 const appRoutes: Routes = [
   // { path: '', component: HeaderComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'animation', component: AnimationComponent },
+  { path: 'signup', component: SignupComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'animation', component: AnimationComponent, pathMatch: 'full' },
+  { path: 'addAvenger', component: AddAvengersComponent, pathMatch: 'full' },
   { path: '', redirectTo: 'signup', pathMatch: 'full' },
   { path: '**', component: SignupComponent },
 ]
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
     SuperHeroComponent,
     SignupComponent,
     LoginComponent,
+    AddAvengersComponent,
   ],
   imports: [
     BrowserModule,

@@ -22,8 +22,6 @@ export class LoginComponent implements OnInit {
     })
   }
   onLogin() {
-    console.log();
-    // this.loginForm.reset();
     this.myService.loginForm(this.loginForm.value.loginData).subscribe((apiResponse) => {
       if (apiResponse.status === 200) {
         console.log(apiResponse);

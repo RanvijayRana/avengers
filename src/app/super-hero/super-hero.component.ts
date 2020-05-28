@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Avenger } from '../shared/avenger.model';
 import { AvengersService } from '../shared/avengers.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-super-hero',
@@ -22,7 +23,7 @@ export class SuperHeroComponent implements OnInit {
   // ];
 
   superHero = "";
-  constructor(private myService: AvengersService, private toastr: ToastrService) { }
+  constructor(private myService: AvengersService, private toastr: ToastrService, private router: Router) { }
 
 
   ngOnInit() {
@@ -36,6 +37,10 @@ export class SuperHeroComponent implements OnInit {
         this.toastr.error("error while retreiving the avengers data")
       }
     })
+  }
+
+  addAvenger() {
+    this.router.navigate(['addAvenger']);
   }
 
 }

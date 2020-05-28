@@ -1,18 +1,19 @@
 <div class="row" style="padding-left:10px;">
-  <a href="#" style="margin: 35px; display: block;" class="card col-sm-3" *ngFor="let hero of superHero">
+  <div class="cardAni card col-sm-3" *ngFor="let hero of superHero">
     <div class="card-body">
       <h3 class="card-title">{{hero.avengerName}}</h3>
       <img class="card-text" style="width: 100% ; height: 200px;" src="{{hero.imageUrl}}" alt="hello">
-      <h5 class="card-footer">List of Movie: <span *ngFor="let movie of hero.movie" style="color:burlywood;">
+      <h5 class="card-footer">List of Movie:
+        <span *ngFor="let movie of hero.movie" style="color:burlywood;">
           <h6>{{movie}}</h6>
-        </span></h5>
-
+        </span>
+      </h5>
     </div>
-  </a>
-  <a href="#" style="margin: 35px; display: block;" class="card col-sm-3">
+  </div>
+  <div class="cardAni card col-sm-3" (click)="addAvenger()">
     <div class="card-body">
       <h3 class="card-title">Add new Avenger</h3>
-      <h3 class="card-text" style="width: 100% ; height: 200px;"> Click here </h3>
+      <a href="" class="card-text"><img class="addAvenger" src="../../assets/img/add.jpg" alt="Add new Avenger"></a>
     </div>
-  </a>
+  </div>
 </div>
