@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Avenger } from '../shared/avenger.model';
 import { AvengersService } from '../shared/avengers.service';
 import { ToastrService } from 'ngx-toastr';
@@ -22,6 +22,8 @@ export class SuperHeroComponent implements OnInit {
   //   // new Avenger("Groot", "Groot", "Vin Diesel", "https://terrigen-cdn-dev.marvel.com/content/prod/1x/024grt_com_crd_01.jpg", ["Avengers: Infinity War", "Guardian of Galaxy Vol. 2", "Guardian of Galaxy"], ["Strength", "Regeneration", "Light Spores"])
   // ];
 
+  @Output() cardEvent: EventEmitter<String> = new EventEmitter<String>();
+
   superHero = "";
   constructor(private myService: AvengersService, private toastr: ToastrService, private router: Router) { }
 
@@ -41,6 +43,10 @@ export class SuperHeroComponent implements OnInit {
 
   addAvenger() {
     this.router.navigate(['addAvenger']);
+  }
+  selectedCard(hero) {
+    this.cardEvent.emit(hero.avengerName);
+    console.log("event emitted");
   }
 
 }

@@ -17,7 +17,6 @@ import { AddAvengersComponent } from './super-hero/add-avengers/add-avengers.com
 
 
 const appRoutes: Routes = [
-  // { path: '', component: HeaderComponent },
   { path: 'signup', component: SignupComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: 'animation', component: AnimationComponent, pathMatch: 'full' },

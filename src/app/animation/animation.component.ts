@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
     selector: 'app-animation',
@@ -7,4 +8,10 @@ import { Component } from "@angular/core";
 })
 export class AnimationComponent {
 
+    constructor(private toastr: ToastrService) { }
+
+    showAvenger(avengerName) {
+        console.log("event received");
+        this.toastr.show(`Averger ${avengerName} Selected`);
+    }
 }
